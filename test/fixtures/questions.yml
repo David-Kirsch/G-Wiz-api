@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  related_words: MyString
+  option_1: MyString
+  option_2: MyString
+  correct_answer: 1
+  user_id: MyString
+
+two:
+  related_words: MyString
+  option_1: MyString
+  option_2: MyString
+  correct_answer: 1
+  user_id: MyString
