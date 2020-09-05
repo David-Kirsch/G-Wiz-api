@@ -15,20 +15,19 @@ ActiveRecord::Schema.define(version: 2020_09_04_193241) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "badges", force: :cascade do |t|
-    t.string "name"
-    t.string "img"
-    t.integer "user_id"
+  create_table "questions", force: :cascade do |t|
+    t.text "related_words", default: [], array: true
+    t.string "option_1"
+    t.string "option_2"
+    t.integer "correct_answer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "questions", force: :cascade do |t|
-    t.string "related_words"
-    t.string "option_1"
-    t.string "option_2"
-    t.integer "correct_answer"
+  create_table "user_questions", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "question_id"
+    t.string "outcome"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
