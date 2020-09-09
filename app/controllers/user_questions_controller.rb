@@ -14,6 +14,12 @@ class UserQuestionsController < ApplicationController
         render json: userQuestion, except: [:created_at, :updated_at, :outcome]
     end
 
+    def destroy
+        userQuestion = UserQuestion.find(params[:id])
+        userQuestion.destroy
+        render json: {}
+    end
+
 private
     def user_question_params
         params.require(:user_question).permit(:user_id, :question_id, :outcome)
