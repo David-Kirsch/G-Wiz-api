@@ -28,6 +28,6 @@ class QuestionsController < ApplicationController
 
 private
     def question_params
-        params.require(:question).permit(:option_1, :option_2, :correct_answer, :level, :difficulty, related_words: [])
+        params.require(:question).permit(:option_1, :option_2, :correct_answer, :level, :difficulty, :creator, related_words: [])
     end
 end
